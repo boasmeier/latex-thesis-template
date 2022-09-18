@@ -1,0 +1,52 @@
+% Define document class. Options: article, report, book, ...
+\documentclass{report}
+
+% Include preamble.tex
+\input{preamble}
+
+% Include acronyms and glossary declarations
+\input{acronyms}
+\input{glossary}
+
+% Start of document content
+\pagenumbering{roman}
+\begin{document}
+
+\include{0a_title-page}
+\include{copyright}
+\include{0b_declaration}
+\include{0c_abstract}
+\include{0d_acknowledgements}
+
+\tableofcontents
+\thispagestyle{empty}
+
+\include{demo}
+\include{01_introduction}
+\include{02_state-of-the-art}
+\include{03_concept}
+\include{04_methodology}
+\include{05_realization}
+\include{06_evaluation}
+\include{07_conclusion}
+
+\appendix
+\include{A_appendix}
+
+\part*{Listings}
+\origaddtocontents{toc}{\protect\origcontentsline{part}{Listings}{}\%}
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listfigurename}
+\listoffigures
+
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listtablename}
+\listoftables
+
+\printglossary[type=\acronymtype]
+\printglossary
+\printbibliography[heading=bibintoc, title={Bibliography}]
+
+\end{document}

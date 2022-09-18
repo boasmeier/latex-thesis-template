@@ -1,0 +1,79 @@
+% Needed to add contents to toc without hyperlink
+\let\origcontentsline\contentsline
+\let\origaddtocontents\addtocontents
+
+% Include packages
+\usepackage[utf8]{inputenc}
+% caption is used to jump to top of image, table and not to caption.
+\usepackage{amsmath, amsfonts, amsthm, graphicx, caption, tabularray, adjustbox, geometry, lipsum, hyperref, caption, setspace, fancyvrb, fancyhdr, lastpage, etoolbox, xcolor, tikz, tcolorbox, siunitx}
+\usepackage[Lenny]{fncychap} %Options: Sonny, Lenny, Glenn, Conny, Rejne, Bjarne, Bjornstrup
+\usepackage[acronym]{glossaries-extra}
+\usepackage[hyperref=true, backref=true, backend=biber, style=apa, sorting=nyt]{biblatex}
+
+% Set page margins (package: geometry)
+\newgeometry{
+    top=3cm,
+    bottom=2.5cm,
+    outer=4cm,
+    inner=4.5cm
+}
+
+% Set title of pdf and color of internal and external links (package: hyperref)
+\hypersetup{
+    linktoc=all,
+    colorlinks=true,
+    linkcolor=black,
+    citecolor=black,
+    urlcolor=blue,
+    pdftitle={Bachelor Thesis}
+}
+
+% Needed so that hyperref also works in combination with \appendix
+\renewcommand{\theHchapter}{\thepart.\thechapter}
+
+% Set pagestyle of the first page of a new chapter to chapterstart (package: etoolbox)
+\patchcmd{\chapter}{plain}{chapterstart}{}{}
+% Declare chapterstart pagestyle to have no line, no headers and no footers (package: fancyhdr)
+\fancypagestyle{chapterstart}{%
+  \renewcommand{\headrulewidth}{0pt}%
+  \fancyhf{}%
+}
+
+% Set default pagestyle to fancy and declare headers and footers. (package: fancyhdr)
+\pagestyle{fancy}
+\renewcommand{\chaptermark}[1]{\markboth{#1}{}}
+\renewcommand{\sectionmark}[1]{\markright{#1}{}}
+\lhead{Thesis}
+\rhead{\leftmark}
+\cfoot{}
+\rfoot{\thepage}
+%\rfoot{Page \thepage\ of \pageref{LastPage}}
+
+% Format chapter title (package: fancychap)
+\ChNameUpperCase
+%\ChNumVar{\fontsize{40}{42}\usefont{OT1}{ptm}{m}{n}\selectfont}
+\ChTitleVar{\huge\sc}
+
+% Increase space between text by 50 % (package: setspace)
+\onehalfspacing 
+
+% Increase space between table rows by 0.3 em (package: tabularray)
+\SetTblrInner{rowsep=0.3em}
+
+% Remove indentation in list of figures and list of tables
+\makeatletter
+\renewcommand*\l@figure{\@dottedtocline{1}{0em}{2.3em}} % Default: 1.5em/2.3em
+\let\l@table\l@figure
+\makeatother
+
+% Define acronym style and create glossary (package: glossaries-extra)
+\setabbreviationstyle[acronym]{long-short}
+\makeglossaries
+
+% Add bib resource and configure blibliography (package: biblatex)
+\addbibresource{ref.bib}
+\DefineBibliographyStrings{english}{%
+    backrefpage  = {see p.}, % for single page number
+    backrefpages = {see pp.} % for multiple page numbers
+}
+\newcommand{\apacite}[1]{(\cite{#1})}

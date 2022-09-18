@@ -1,0 +1,79 @@
+\chapter*{Demo}
+\section*{Cite}
+Test cite \apacite{yamauchi_use_2021}.
+
+\section*{Hyperref}
+Test Href \href{http://google.ch}{Google}. You can also jump to a chapter or section (see \ref{ch:introduction}). We can also jump to the appendix (see \ref{app:a}).
+
+\section*{fancyvbr}
+
+\begin{Verbatim}[numbers=left, frame=single]
+client = RestClient("localhost:80", "application/json")
+students = client.Get("/api/students")
+\end{Verbatim}
+
+\section*{color}
+Make {\color{red} this} red.
+
+\section*{tcolorbox}
+\begin{tcolorbox}
+This is a tcolorbox.
+\end{tcolorbox}
+
+\section*{Glossary}
+The \gls{latex} typesetting markup language is specially suitable 
+for documents that include \gls{maths}. 
+
+\section*{Acronym}
+This is a \gls{cnn} and the second \gls{cnn}.
+
+\section*{SI units}
+\[5 kg m /s^2\]
+
+\[5\ \mathrm{kg}\ \mathrm{m}/\mathrm{s}^2\]
+
+\[5\ \si{kg.m/s^2}\]
+
+\section*{Tables}
+\subsection*{Simple Table}
+In this thesis you should always use a forward reference for your tables \ref{tab:demo}.
+\begin{table}[ht]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tblr}{ l|l|l } 
+ metric & average & other \\ 
+ \hline
+ accuracy & 90 \% & 65 \% \\ 
+ precision & 81 \% & 70 \% \\
+ f1 & 87 \% & 63 \% \\ 
+\end{tblr}
+\end{adjustbox}
+\caption{This is a demo caption for a simple table.}
+\label{tab:demo}
+\end{table}
+
+The following table \ref{tab:reference_label_prefix} shows which prefix to use for different types of labels.
+\begin{table}[ht]
+\centering
+\begin{adjustbox}{max width=\textwidth}
+\begin{tblr}{ l|l l l l l l l }
+ Name & Chapter & Section & Subsection & Equation & Figure & Table & Appendix \\
+ \hline
+ Abbrev. & ch: & sec: & subsec: & eq: & fig: & tab: & app: \\
+\end{tblr}
+\end{adjustbox}
+\caption{Add some letters to the label to recognize what you are referencing.}
+\label{tab:reference_label_prefix}
+\end{table}
+
+
+\section*{Figures}
+In this thesis you should always use a forward reference for your figures \ref{fig:demo}.
+\begin{figure}[ht]
+    \centering
+    \includegraphics[width=\textwidth,height=\textheight,keepaspectratio]{images/demo.png}
+    \caption{This is a demo caption for a figure.}
+    \label{fig:demo}
+\end{figure}
+
+
