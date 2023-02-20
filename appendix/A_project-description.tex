@@ -1,0 +1,37 @@
+\part*{Appendix}
+\origaddtocontents{toc}{\protect\origcontentsline{part}{Appendix}{}\%}
+\chapter{Original Project Description}\label{app:original_project_description}
+Following the original project description in German as created in JointCreate \apacite{jointcreate_project}.
+
+\section{Ausgangslage und Problemstellung}
+Die Katarakt oder Grauer Star ist eine Trübung der Augenlinse, die zu einem langsam fortschreitenden Verlust der Sehschärfe führt. Die Katarakt tritt bei ca. jeder sechsten Person über 40 Jahren auf. Bei der Kataraktoperation wird die trübe Linse durch ein künstliches Implantat ersetzt. Die Kataraktoperation ist die heute weltweit am häufigsten durchgeführte Operation. Alleine in Deutschland werden rund 950.000 Eingriffe pro Jahr durchgeführt. Die exzellente Erfolgsquote und Zufriedenheit der Patienten im Allgemeinen täuscht darüber hinweg, dass bei wenigen Prozent der Patienten refraktive Überraschungen oder Komplikationen auftreten, so dass hier ggf. Folgeeingriffe nötig sind bis hin zur Explantation / zum Ersatz der Linse. Oft werden dabei Premiumlinsen mit Zusatzfunktionen gegen deutlich besser tolerierte Standardlinsen ausgetauscht.
+
+Viele der refraktiven Überraschungen sollten vermeidbar sein, wenn entsprechende Screeningverfahren vorhanden wären welche die vor dem Eingriff erhobenen biometrischen Daten sowie patientencharakteristische Größen abgleichen und dem Operateur eine Warnung an die Hand geben, z.B. von Premiumlinsen (multifokale oder torische Linsen) abzusehen.
+
+\section{Datenmaterial}
+Zur Verfügung stehen einige Tausend vor einer Kataraktoperation erhobene biometrische Messungen (mit dem IOLMaster700 der Firma Carl-Zeiss-Meditec, vollständige Datensätze), patientencharakteristische Daten wie das Alter und Geschlecht, der Brechwert und Typ der implantierten Linse, sowie das refraktive Ergebnis nach der Operation. Der Brechwert der zu implantierenden Linse bzw. die zu erwartenden Refraktion nach dem Eingriff können mit den biometrischen Größen abgeschätzt werden, so dass die Abweichung der tatsächlich gemessenen Refraktion von der vorhergesagten Refraktion als "Refraktionsüberraschung" definiert ist.
+
+\section{Ziel der Arbeit und erwartete Resultate}
+In dieser Arbeit soll ein Machine Learning Verfahren entwickelt werden, mit dem die Refraktionsüberraschung vorhergesagt werden kann. Dabei ist sowohl eine Vorhersage in Form einer Klassifizierung (deutliche/mittlere/geringe Abweichung in Richtung Myopie/Hyperopie) oder auch kontinuierliche Vorhersage (Regression) möglich.
+
+Abgegeben werden soll ein Bericht mit State-of-the-Art, Konzept, Ansätzen, der/den entwickelten Methoden und einer robusten Evaluation, sowie lauffähiger, kommentierter Programmcode.
+
+\section{Gewünschte Methoden, Vorgehen}
+Bei diesem Projekt handelt es sich um explorative Forschung, das in einem iterativen, inkrementellen Ansatz umgesetzt werden soll. Die/der Student:in soll den aktuellen Stand des Projektes und die nächsten Schritte in regelmässigen Absprachen mit dem Betreuer besprechen, um Feedback zu sammeln und sich zu verbessern. Dabei gilt es, den Fokus auf der Entwicklung eines Vorhersage-Algorithmus zu halten und diesen im Sinne einer Machbarkeitsstudie zu entwickeln und zu testen.
+
+Darüber hinaus müssen Risiken so früh wie möglich gesammelt, verfolgt und gemindert werden, um zu überprüfen, ob einige Risiken ein Hindernis für das Projekt darstellen.
+
+\section{Kreativität, Varianten, Innovation}
+Das Projektziel ist bewusst offen formuliert und lässt viel Raum für eigene Kreativität.
+
+Die Auswahl und Umsetzung des geeigneten Projektvorgehens ist Teil der Projektaufgabe und liegt grundsätzlich in der Verantwortung der/s Student:in. In regelmäßigen Treffen mit dem Betreuer werden der aktuelle Stand und die nächsten Schritte besprochen.
+
+Der Betreuer soll regelmässig bis einen Tag vor dem geplanten Treffen schriftlich (max. 1 Seite) über den aktuellen Stand informiert werden:
+
+\begin{itemize}
+  \item Welche Arbeiten wurden im letzten Berichtszeitraum durchgeführt, welche Arbeiten sind für die nächste Periode geplant
+  \item Stand der Arbeiten (Soll-Ist-Vergleich mit Planung), ggf. Begründung von Abweichungen
+  \item Top-3-Risiken inklusive geplanter Maßnahmen
+\end{itemize}
+
+Die Architektur soll so einfach wie möglich gehalten werden. Bezüglich der Programmiersprache ist der/die Student:in frei; es sollen jedoch wenn möglich und sinnvoll vorhandene Open-Source-Bibliotheken (wie sklearn, pytorch, …) wiederverwendet werden, um das Ziel effizient zu erreichen.

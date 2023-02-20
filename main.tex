@@ -1,5 +1,6 @@
 % Define document class. Options: article, report, book, ...
-\documentclass{report}
+% \documentclass[twoside]{report} % use this if document is printed
+\documentclass{report}  % use this if document only used as pdf
 
 % Include preamble.tex
 \input{preamble}
@@ -11,27 +12,30 @@
 % Start of document content
 \pagenumbering{roman}
 \begin{document}
+\begin{sloppypar}
 
 \include{0a_title-page}
 \include{copyright}
 \include{0b_declaration}
 \include{0c_abstract}
 \include{0d_acknowledgements}
+\include{demo}
 
 \tableofcontents
-\thispagestyle{empty}
 
-\include{demo}
-\include{01_introduction}
-\include{02_state-of-the-art}
-\include{03_concept}
-\include{04_methodology}
-\include{05_realization}
-\include{06_evaluation}
-\include{07_conclusion}
+\include{chapters/01_introduction}
+\include{chapters/02_state-of-research}
+\include{chapters/03_concept}
+\include{chapters/04_methodology}
+\include{chapters/05_realization}
+\include{chapters/06_evaluation}
+\include{chapters/07_conclusion}
 
 \appendix
-\include{A_appendix}
+\include{appendix/A_project-description}
+\include{appendix/B_minutes}
+\include{appendix/C_milestones}
+\include{appendix/D_risks}
 
 \part*{Listings}
 \origaddtocontents{toc}{\protect\origcontentsline{part}{Listings}{}\%}
@@ -45,8 +49,17 @@
 \addcontentsline{toc}{chapter}{\listtablename}
 \listoftables
 
+\cleardoublepage
+\phantomsection
+\addcontentsline{toc}{chapter}{\listequationsnamedefaultformat}
+\listofmyequations
+
 \printglossary[type=\acronymtype]
 \printglossary
+
+\cleardoublepage
+\phantomsection
 \printbibliography[heading=bibintoc, title={Bibliography}]
 
+\end{sloppypar}
 \end{document}
